@@ -9,3 +9,4 @@ nombre_ninio = str(input("Ingrese el nombre del niño: "))
 print(f"El niño {nombre_ninio} tiene {edad_ninio} años.")
 Hola, creo que ya pude hacerlo 
 prin("Hola Soy Leandro, estoy probando el git")
+HOLAHOLHOLA
