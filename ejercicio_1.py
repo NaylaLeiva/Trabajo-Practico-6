@@ -1,0 +1,7 @@
+#--- ZONA DE VARIABLES ---#
+
+
+#--- ZONA DE FUNCIONES ---#
+
+
+#--- ZONA DE CONSOLA ---#
