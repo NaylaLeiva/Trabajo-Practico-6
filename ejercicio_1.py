@@ -1,23 +1,9 @@
-import math
-import time
+#--- ZONA DE VARIABLES ---#
+edad_ninio = int(input("Ingrese la edad del niño: "))
+nombre_ninio = str(input("Ingrese el nombre del niño: "))
 
-def menu():
-    print("--------------------------------------------------")
-    print("1) Ingresar datos del niño")
-    print("2) Calcular promedio del tiempo en pantalla (mins)")
-    print("3) Dispositivo mas utilizado")
-    print("4) Exposicion")
-    print("5) Salir")
-    print("--------------------------------------------------")
-    eleccion = int(input("Elija una opcion! --> "))
+#--- ZONA DE FUNCIONES ---#
 
-    while not (1 <= eleccion <= 5):
-        eleccion = int(input("Opcion invalida, intenta otra vez: "))
-    
-    return eleccion
 
-def main():
-    opcion = menu()
-    print("Elegiste la opcion: ", opcion)
-
-main()
+#--- ZONA DE CONSOLA ---#
+print(f"El niño {nombre_ninio} tiene {edad_ninio} años.")
