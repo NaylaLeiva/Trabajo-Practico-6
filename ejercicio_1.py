@@ -7,3 +7,4 @@ nombre_ninio = str(input("Ingrese el nombre del niño: "))
 
 #--- ZONA DE CONSOLA ---#
 print(f"El niño {nombre_ninio} tiene {edad_ninio} años.")
+Hola, creo que ya pude hacerlo 
