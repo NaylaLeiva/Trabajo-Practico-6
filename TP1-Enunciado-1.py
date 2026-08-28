@@ -2,6 +2,26 @@
 edad_ninio = int()
 nombre_ninio = str()
 ninio_registrado = int()
+minutos_por_uso = {
+    "tablet": {
+        "juegos":   {"ocasionalmente": 50,  "frecuentemente": 120, "nunca": 0},
+        "videos":   {"ocasionalmente": 60,  "frecuentemente": 180, "nunca": 0},
+        "estudios": {"ocasionalmente": 30,  "frecuentemente": 90, "nunca": 0}
+    },
+    "pc": {
+        "juegos":   {"ocasionalmente": 40, "frecuentemente": 100, "nunca": 0},
+        "videos":   {"ocasionalmente": 50, "frecuentemente": 150, "nunca": 0},
+        "estudios": {"ocasionalmente": 50, "frecuentemente": 100, "nunca": 0}
+    },
+    "celular": {
+        "juegos":   {"ocasionalmente": 60, "frecuentemente": 120, "nunca": 0},
+        "videos":   {"ocasionalmente": 60, "frecuentemente": 120, "nunca": 0},
+        "estudios": {"ocasionalmente": 30, "frecuentemente": 70, "nunca": 0}
+    }
+}
+exposicion = {
+    "tablet": {}
+}
 
 #--- ZONA DE FUNCIONES ---#
 def menu():
@@ -23,43 +43,27 @@ def main():
     while (opcion != 5):   
         if (opcion == 1):
             edad_ninio = int(input("Ingrese la edad del niño: "))
+            if (edad_ninio >= 3 and edad_ninio <= 12):
+                print(f"El niño solo tiene un máximo de 120 minutos de uso de pantalla al día")
+            elif (edad_ninio >= 13 and edad_ninio <= 18):
+                print(f"El niño solo tiene un máximo de 300 minutos de uso de pantalla al día")
             nombre_ninio = str(input("Ingrese el nombre del niño: "))
             ninio_registrado += 1
         elif (opcion == 2):
-            dispositivo_mas_utilizado = str(input("Ingrese los dispositivos que más utiliza el niño: tablet, celular o pc: "))
-            if (dispositivo_mas_utilizado == "tablet"):
-                print("El dispositivo más utilizado es la tablet.")
-            elif (dispositivo_mas_utilizado == "celular"):
-                print("El dispositivo más utilizado es el celular.")
-            elif (dispositivo_mas_utilizado == "pc"):
-                print("El dispositivo más utilizado es la PC.")
-            else: 
+            dispositivo_mas_utilizado = str(input("Ingrese los dispositivos que más utiliza el niño: tablet, celular o pc: "))        
+            if (dispositivo_mas_utilizado != "tablet" and "celular" and "pc"):
                 print("Opción inválida, elija otra vez.")
                 opcion = menu() 
         elif (opcion == 3):
-            if (dispositivo_mas_utilizado == "tablet"):
-                fines_de_uso = str(input("Para que fin usa más la tablet? (juegos, videos, estudios): "))
-                if (fines_de_uso == "juegos"):
-                    uso_tablet = str(input("Que tan amenudo juega el niño en la tablet? (ocasionalmente, frecuentemente): "))
-                    if (uso_tablet == "ocasionalmente"):
-                        uso_tablet = 50
-                    elif (uso_tablet == "frecuentemente"):
-                        uso_tablet = 120
-                elif (fines_de_uso == "videos"):
-                    uso_tablet = str(input("Que tan amenudo ve videos el niño en la tablet? (ocasionalmente, frecuentemente): "))
-                    if (uso_tablet == "ocasionalmente"):
-                        uso_tablet = 60
-                    elif (uso_tablet == "frecuentemente"):
-                        uso_tablet = 180
-                elif (fines_de_uso == "estudios"):
-                    uso_tablet = str(input("Que tan amenudo estudia el niño en la tablet? (ocasionalmente, frecuentemente): "))
-                    if (uso_tablet == "ocasionalmente"):
-                        uso_tablet = 30
-                    elif (uso_tablet == "frecuentemente"):
-                        uso_tablet = 90
+            if (dispositivo_mas_utilizado == ""):
+                print("Opción inválida, elija la opcion 2 primero.")
+                opcion = menu()
 
-
-            uso_dispositivo = uso_tablet    
+            inf = input("Para que fin usa más el dispositivo? (juegos, videos, estudios): ")
+            frecuencia = input("Que tan amenudo usa el dispositivo? (ocasionalmente, frecuentemente, nunca): ")
+            uso_dispositivo = minutos_por_uso[dispositivo_mas_utilizado][inf][frecuencia]
+            print (f"Tiempo estimado de uso del dispositivo {dispositivo_mas_utilizado} para {inf} es de {uso_dispositivo} minutos al día.")
+   
             print("elegiste: ",opcion)
         elif (opcion == 4):
             print("elegiste: ",opcion)
