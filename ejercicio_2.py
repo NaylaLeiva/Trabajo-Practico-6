@@ -14,7 +14,7 @@ pago = {
 
 #--- ZONA DE FUNCIONES ---#
 print("\n--------------------¡Bienvenido a Pizzeria Iprog!------------------------------")
-Cliente= str(input("Ingrese el nombre del cliente: "))
+
 def menu():
     print("\n--------------------------------------------------")
     print("1) Pedir pizza")
@@ -57,6 +57,7 @@ def calcular_total(cantidad_pizzas, opcion_pago, id_pizza, total_a_pagar, Client
           
 #--- ZONA DE CONSOLA ---#
 def main():
+    Cliente= str(input("Ingrese el nombre del cliente: "))
     opcion = menu()
     id_pizza = None
     cantidad_pizzas = 0
