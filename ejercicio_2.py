@@ -90,6 +90,11 @@ def main():
             if id_pizza is None:
                 print("No ha seleccionado ninguna pizza.")
                 opcion = menu()
+                continue
+            elif cantidad_pizzas == 0:
+                print("No ha ingresado la cantidad de pizzas.")
+                opcion = menu()
+                continue
             else:
                 nombre_pizza = opcion_pizza[str(id_pizza)]["nombre"]
                 precio_pizza = opcion_pizza[str(id_pizza)]["precio"]
