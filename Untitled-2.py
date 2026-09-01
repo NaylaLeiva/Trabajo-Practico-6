@@ -1,3 +1,6 @@
+#inicialización de contadores
+cantidad_clientes = 0
+total_pizzas = 0
 print ("===========")
 print ("sistema de venta de pizzería")
 print ("===========")
@@ -6,53 +9,42 @@ variedad_pizza = input("ingrese la variedad de pizza: ")
 cantidad_pizzas = int(input("ingrese la cantidad de pizzas: "))
 precio_pizza = float(input("ingrese el precio de la pizza: "))
 
-#descuento por comprar>=3 :
-#forma de pago
-pago = input("ingrese la forma de pago (efectivo/tranferencia): ")
-descuento = 0
-recargo = 0
-if pago == ("efectivo"):
- descuento = subtotal * 0.10
- print("descuento por pago en efectivo: ", descuento)
-elif pago == ("transferencia"):
-  recargo =0
-  print("pago por tranferencia realizado")
-else:
-    print("forma de pago no valida")
 #calcular subtotal
 subtotal = cantidad_pizzas * precio_pizza
-
+#forma de pago
+pago = input("ingrese la forma de pago (efectivo/transferencia): ")
+descuento = 0
+recargo= 0
+# evaluamos el pago y aplicamos descuento o recargo
+if pago == "efectivo":
+    descuento = subtotal * 0.10
+    print("descuento por pago en efectivo: ", descuento)
+elif pago == "transferencia":
+    recargo = subtotal * 0.05
+    print("pago por transferencia realizado")
+else:
+    print("forma de pago no válida")
 #acumular datos
-total = subtotal - descuento + recargo
+total= subtotal - descuento + recargo
 cantidad_clientes = cantidad_clientes + 1
 total_pizzas = total_pizzas + cantidad_pizzas
-
-print("cliente :", nombre_cliente)
-print("variedad de pizza :", variedad_pizza)
-print("cantidad de pizzas :", cantidad_pizzas)
-print("descuento :", descuento)
-print("recargo :", recargo)
-print("total a pagar :", total)
+total_ventas = total_ventas + total
+print(f"""
+cliente: {nombre_cliente}
+variedad de pizza: {variedad_pizza}
+cantidad de pizzas: {cantidad_pizzas}
+descuento: {descuento}
+recargo: {recargo}
+total a pagar: {total}
+""")
 
 #resumen final
-print("===========")
-print("resumen final")
-print("===========")
-print("total de clientes atendidos :", cantidad_clientes)
-print("total de pizzas vendidas :", total_pizzas)
-print("total de ventas :", total_ventas)
-print("promedio de ventas por cliente :", total_ventas / cantidad_clientes)
+print(f"""
+total de clientes atendidos: {cantidad_clientes}
+total de pizzas vendidas: {total_pizzas}  
+total de ventas: {total_ventas: .2f}
+""")
 
 print("============")
 print("FIN DEL PROGRAMA")
 print("============")
-
-
-
-      
-
-
- 
-
-
-
