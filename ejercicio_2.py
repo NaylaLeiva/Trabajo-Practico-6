@@ -112,5 +112,6 @@ def main():
                     print("Se ha agregado otro cliente.")
                     main()  # Se reinicia el proceso para un nuevo cliente
             elif menu_final == 2:
-                    print("Pedido cancelado.")       
+                    print("------------------Pedido cancelado.---------------------")
+                    break       
 main()
