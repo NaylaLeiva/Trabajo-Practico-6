@@ -7,9 +7,9 @@ opcion_pizza = {
     "5": {"nombre": "Pizza Fugazzeta", "precio": 16000}
 } 
 pago = {
-    "1": {"nombre": "Efectivo", "valor": "descuento", "descuento": 10},
-    "2": {"nombre": "Tarjeta de crédito", "valor": "recargo", "recargo": 5},
-    "3": {"nombre": "Tarjeta de débito", "valor": "recargo", "recargo": 5}
+    "1": {"nombre": "Efectivo", "valor": "descuento", "recarge": 10},
+    "2": {"nombre": "Tarjeta de crédito", "valor": "recargo", "recarge": 5},
+    "3": {"nombre": "Tarjeta de débito", "valor": "recargo", "recarge": 5}
 }
 
 #--- ZONA DE FUNCIONES ---#
@@ -50,7 +50,7 @@ def calcular_total(cantidad_pizzas, opcion_pago, id_pizza, total_a_pagar, Client
     print(f"El cliente {Cliente} ha pedido {cantidad_pizzas} {opcion_pizza[str(id_pizza)]['nombre']}.")
     print(f"El total a pagar es de ${total_a_pagar:.2f} con descuento/recargo incluido.")
     print(f"Metodo de pago elegido: {pago[str(opcion_pago)]['nombre']}.")
-    print(f"Se incluye un {pago[str(opcion_pago)]['valor']} del {pago[str(opcion_pago)]['descuento']}%")
+    print(f"Se incluye un {pago[str(opcion_pago)]['valor']} del {pago[str(opcion_pago)]['recarge']}%")
     print("--------------------------------------------------")
     eleccion = int(input("\nDesea agregar a otro cliente? (1) o cancelar? (2) --> "))
     return eleccion
