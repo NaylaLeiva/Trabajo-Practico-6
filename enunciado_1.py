@@ -39,7 +39,7 @@ def promedio():
         if (dispositivos[eleccion][1] != 0):
             print("\nEse dispositivo ya fue ingresado.")
         else:
-            tiempo = int(input("\nCuanto tiempo lo usa? "))
+            tiempo = int(input("\nCuanto tiempo lo usa? (mins) "))
             dispositivos[eleccion][1] = tiempo
             resultado += tiempo
             cantidad += 1
@@ -75,16 +75,18 @@ def expocicion(dispositivos, edad_ninio):
         print("su ninio no deberia usar disositivos aun, se le recomienda un maximo de 20 mins.")
     elif (4 <= edad_ninio < 12):
         if(expocicion_total >= 120):
-            print("Su niño una expocicion mayor al promedio para su edad, se recominada reducir el tiempo en pantall.")
+            print("Su niño tiene una expocicion mayor al promedio para su edad, se recominada reducir el tiempo en pantall.")
         else:
             print("Su niño tiene un uso adecuado para el tiempo en pantalla")
     elif (12 <= edad_ninio < 18):
         if(expocicion_total >= 320):
-            print("Su niño una expocicion mayor al promedio para su edad, se recominada reducir el tiempo en pantall.")
+            print("Su niño tiene una expocicion mayor al promedio para su edad, se recominada reducir el tiempo en pantall.")
         else:
             print("Su niño tiene un uso adecuado para el tiempo en pantalla")
     else:
         print("Su niño es un adulto, promedio general recomendado es de 8 horas (480 mins)")
+    
+    print("Exposicion del ninio: ", expocicion_total, "(tiempo total de minutos en pantallas)")
         
     return expocicion_total
     
@@ -124,6 +126,6 @@ def main():
             opcion = menu()
         opcion = menu()
         
-    print("El ninio", nombre_ninio, "tiene", edad_ninio, "y tiene una expocicion de:", expocicion_total , "\n")
+    print(nombre_ninio, "tiene", edad_ninio, "años de edad y tiene una expocicion de:", expocicion_total , "\n")
     
 main()
